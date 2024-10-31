@@ -1,31 +1,27 @@
-import { StyleSheet } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, ImageBackground } from 'react-native';
+import { PaperProvider, Text } from 'react-native-paper';
+import styles from '../../constants/Styles';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to BookDetailschecker </Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <PaperProvider>
+      <View style={pageStyles.container}>
+        <Text style={[styles.welcomeText, { color: styles.cardTitle.color }]}>Welcome to the Book Details App</Text>
+      </View>
+    </PaperProvider>
   );
 }
 
-const styles = StyleSheet.create({
+const pageStyles = StyleSheet.create({
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
   },
 });
