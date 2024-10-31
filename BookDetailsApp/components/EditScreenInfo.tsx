@@ -42,6 +42,16 @@ export default function EditScreenInfo({ path }: { path: string }) {
           </Text>
         </ExternalLink>
       </View>
+
+      <View style={styles.helpContainer}>
+        <ExternalLink
+        style={styles.helpLink}
+        href="https://noa.noseryoung.ch/login">
+          <Text> 
+            Tap here to send your journal
+          </Text>
+        </ExternalLink>
+      </View>
     </View>
   );
 }
