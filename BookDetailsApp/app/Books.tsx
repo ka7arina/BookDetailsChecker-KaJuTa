@@ -1,7 +1,11 @@
-import { StyleSheet, Button } from 'react-native';
+import React from 'react';
+import {StyleSheet, View, ScrollView, ImageBackground} from 'react-native';
+import { PaperProvider } from 'react-native-paper';
+import FilterBar from '../components/FilterBar';
+import BookCard from '../components/BookCard';
+import '../../assets/images/background-image.png'
+import BookButton from '../components/AddBookButton';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
 
 // @ts-ignore
 export default function BookScreen({ navigation }) {
@@ -9,29 +13,43 @@ export default function BookScreen({ navigation }) {
   const seeDetails = () => {
     // navigation.navigate('');
   }
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>this is the bookspage</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
 
-
-    </View>
-  );
+    return (
+        <PaperProvider>
+            <ImageBackground
+                source={require('../../assets/images/background-image.png')}
+                style={pageStyles.background}
+            >
+            <View style={pageStyles.container}>
+                <FilterBar />
+                <BookButton></BookButton>
+                <ScrollView contentContainerStyle={pageStyles.scrollViewContent}>
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                </ScrollView>
+            </View>
+            </ImageBackground>
+        </PaperProvider>
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+const pageStyles = StyleSheet.create({
+    background: {
+        flex: 1,
+        resizeMode: 'cover',
+    },
+    container: {
+        flex: 1,
+
+    },
+    scrollViewContent: {
+        paddingTop: 60,
+    },
 });

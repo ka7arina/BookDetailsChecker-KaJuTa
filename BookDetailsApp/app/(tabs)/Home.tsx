@@ -1,3 +1,7 @@
+import React from 'react';
+import {StyleSheet, View, ScrollView, ImageBackground, Text} from 'react-native';
+import { PaperProvider } from 'react-native-paper';
+import '../../assets/images/background-image.png'
 import  {StyleSheet } from 'react-native';
 import { Text, View } from '@/components/Themed';
 import * as React from "react";
@@ -5,31 +9,40 @@ import {Card} from 'react-native-paper';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Card>
-        <Card.Content>
-          <Text style={styles.title}>Welcome to the
-            Book Crux Library </Text>
-        </Card.Content>
-      </Card>
-    </View>
+      <PaperProvider>
+        <ImageBackground
+            source={require('../../assets/images/background-image.png')}
+            style={styles.background}
+        >
+          <View style={styles.container}>
+              <Card>
+                  <Card.Content>
+                      <Text style={styles.title}>Welcome to the
+                          Book Crux Library </Text>
+                  </Card.Content>
+              </Card>
+          </View>
+        </ImageBackground>
+      </PaperProvider>
   );
 }
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  scrollViewContent: {
+    paddingTop: 60,
   },
   cardContainer: {
     width: '100%',
