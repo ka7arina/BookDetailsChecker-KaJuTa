@@ -1,13 +1,21 @@
-import axios from 'axios';
+import axios from "axios";
 
-//replace with your own API URL and make sure it is not localhost!!
-const API_URL = 'http:// IPv4-Adresse:3000';
-
-const Api = axios.create({
-  baseURL: API_URL,
+const api = axios.create({
+  baseURL: "http://10.40.16.68:3000",
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
-export default Api;
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("accessToken");
+    if (token) {
+      config.headers["Authorization"] = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+export default api;
