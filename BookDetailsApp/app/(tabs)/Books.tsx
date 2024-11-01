@@ -4,6 +4,7 @@ import { PaperProvider } from 'react-native-paper';
 import FilterBar from '../../components/FilterBar';
 import BookCard from '../../components/BookCard';
 import '../../assets/images/background-image.png'
+import BookButton from '../../components/AddBookButton';
 
 export default function BookScreen() {
     return (
@@ -14,6 +15,7 @@ export default function BookScreen() {
             >
             <View style={pageStyles.container}>
                 <FilterBar />
+                <BookButton></BookButton>
                 <ScrollView contentContainerStyle={pageStyles.scrollViewContent}>
                     <BookCard />
                     <BookCard />
