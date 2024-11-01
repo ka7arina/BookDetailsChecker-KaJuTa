@@ -32,7 +32,7 @@ export default function BookScreen() {
         </PaperProvider>
     );
 }
-
+  
 const pageStyles = StyleSheet.create({
     background: {
         flex: 1,
