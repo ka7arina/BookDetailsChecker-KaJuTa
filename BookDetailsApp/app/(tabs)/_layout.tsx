@@ -27,7 +27,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
+        headerShown: false,
       }}>
       <Tabs.Screen
         name="Home"
@@ -52,10 +52,11 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="Books"
+        name="BookStack"
         options={{
             title: 'Books',
             tabBarIcon: ({ color }) => <AntDesign name="book" size={24} color={color} />,
+            headerShown: false,
         }}
       />
 
@@ -64,6 +65,7 @@ export default function TabLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color }) => <AntDesign name="user" size={24} color={color} />,
+          headerShown: false,
         }}
       />
 
