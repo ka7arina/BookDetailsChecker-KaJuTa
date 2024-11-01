@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ImageBackground } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { PaperProvider, Text } from 'react-native-paper';
 import styles from '../../constants/Styles';
 
@@ -13,7 +13,7 @@ export default function BookScreen() {
     </PaperProvider>
   );
 }
-
+  
 const pageStyles = StyleSheet.create({
   background: {
     flex: 1,
