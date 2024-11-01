@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255, 255, 255, 0.55)',
         paddingVertical: 10,
         paddingHorizontal: 15,
+        zIndex: 10,
     },
     box: {
         borderColor: 'grey',
