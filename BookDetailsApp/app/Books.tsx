@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, ScrollView, ImageBackground } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
-import FilterBar from '../../components/FilterBar';
-import BookCard from '../../components/BookCard';
-import BookButton from '../../components/AddBookButton';
-import BookService from '../../services/BookService';
-import { Book } from '../../models/Book.model';
+import FilterBar from '../components/FilterBar';
+import BookCard from '../components/BookCard';
+import BookButton from '../components/AddBookButton';
+import BookService from '../services/BookService';
+import { Book } from '../models/Book.model';
 
 export default function BookScreen() {
     const [books, setBooks] = useState<Book[]>([]);
@@ -39,7 +39,7 @@ export default function BookScreen() {
     return (
         <PaperProvider>
             <ImageBackground
-                source={require('../../assets/images/background-image.png')}
+                source={require('../assets/images/background-image.png')}
                 style={pageStyles.background}
             >
                 <View style={pageStyles.container}>

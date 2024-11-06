@@ -1,0 +1,55 @@
+Index: constants/Colors.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>export default {\r\n  light: {\r\n    black: \"#000000\",\r\n    darkGray: \"#0B0B0A\",\r\n    greenDark: \"#74A265\",\r\n    greenMedium: \"#89C974\",\r\n    greenLight: \"#AFD2A3\",\r\n    offWhite: \"#FBFCFB\",\r\n    white: \"#FFFFFF\",\r\n    text: \"#000000\",         \r\n    background: \"#FBFCFB\",   \r\n  },\r\n  dark: {\r\n    black: \"#FFFFFF\",\r\n    darkGray: \"#D3D3D3\",\r\n    greenDark: \"#74A265\",\r\n    greenMedium: \"#89C974\",\r\n    greenLight: \"#AFD2A3\",\r\n    offWhite: \"#333333\",\r\n    white: \"#000000\",\r\n    text: \"#FFFFFF\",         \r\n    background: \"#0B0B0A\",   \r\n  },\r\n};\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/constants/Colors.ts b/constants/Colors.ts
+--- a/constants/Colors.ts	(revision 6ce652e638268b9151b842f1881b3d4c818081ad)
++++ b/constants/Colors.ts	(date 1730876677792)
+@@ -1,3 +1,6 @@
++const tintColorLight = '#2f95dc';
++const tintColorDark = '#fff';
++
+ export default {
+   light: {
+     black: "#000000",
+@@ -8,7 +11,8 @@
+     offWhite: "#FBFCFB",
+     white: "#FFFFFF",
+     text: "#000000",         
+-    background: "#FBFCFB",   
++    background: "#FBFCFB",
++    tint: tintColorLight,
+   },
+   dark: {
+     black: "#FFFFFF",
+@@ -19,6 +23,7 @@
+     offWhite: "#333333",
+     white: "#000000",
+     text: "#FFFFFF",         
+-    background: "#0B0B0A",   
++    background: "#0B0B0A",
++    tint: tintColorDark,
+   },
+ };
+Index: services/Api.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import axios from 'axios';\r\n\r\n//replace with your own API URL and make sure it is not localhost!!\r\nconst API_URL = 'http:// IPv4-Adresse:3000';\r\n\r\nconst Api = axios.create({\r\n  baseURL: API_URL,\r\n  headers: {\r\n    'Content-Type': 'application/json',\r\n  },\r\n});\r\n\r\nexport default Api;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/services/Api.ts b/services/Api.ts
+--- a/services/Api.ts	(revision 6ce652e638268b9151b842f1881b3d4c818081ad)
++++ b/services/Api.ts	(date 1730876588704)
+@@ -1,7 +1,7 @@
+ import axios from 'axios';
+ 
+ //replace with your own API URL and make sure it is not localhost!!
+-const API_URL = 'http:// IPv4-Adresse:3000';
++const API_URL = 'http://10.40.18.7:3000';
+ 
+ const Api = axios.create({
+   baseURL: API_URL,

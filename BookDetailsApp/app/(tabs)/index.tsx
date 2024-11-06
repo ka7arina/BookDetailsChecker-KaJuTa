@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleSheet, View, ScrollView, ImageBackground, Text} from 'react-native';
+import {StyleSheet, View, ImageBackground, Text} from 'react-native';
 import { PaperProvider } from 'react-native-paper';
-import '../../assets/images/background-image.png'
+import '../../assets/images/background-image.png';
+import {Card} from 'react-native-paper';
 
 export default function HomeScreen() {
   return (
@@ -11,9 +12,12 @@ export default function HomeScreen() {
             style={styles.background}
         >
           <View style={styles.container}>
-            <ScrollView contentContainerStyle={styles.scrollViewContent}>
-              <Text style={styles.title}>this is the homepage</Text>
-            </ScrollView>
+              <Card>
+                  <Card.Content>
+                      <Text style={styles.title}>Welcome to the
+                          Book Crux Library </Text>
+                  </Card.Content>
+              </Card>
           </View>
         </ImageBackground>
       </PaperProvider>
@@ -36,5 +40,9 @@ const styles = StyleSheet.create({
   },
   scrollViewContent: {
     paddingTop: 60,
+  },
+  cardContainer: {
+    width: '100%',
+    alignItems: 'center',
   },
 });
