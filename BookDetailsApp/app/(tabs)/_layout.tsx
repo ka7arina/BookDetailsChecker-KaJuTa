@@ -7,6 +7,8 @@ import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
+import BookStack from './BookStack';
+
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Feather from '@expo/vector-icons/Feather';
 
@@ -51,16 +53,17 @@ export default function TabLayout() {
         }}
       />
 
-      <Tabs.Screen
-        name="BookStack"
-        options={{
-            title: 'Books',
-            tabBarIcon: ({ color }) => <AntDesign name="book" size={24} color={color} />,
-            headerShown: false,
-        }}
-      />
+        <Tabs.Screen
+            name="BookStack"
+            options={{
+                title: 'Books',
+                tabBarIcon: ({ color }) => <AntDesign name="book" size={24} color={color} />,
+                headerShown: false,
+            }}
+        />
 
-      <Tabs.Screen
+
+        <Tabs.Screen
         name="Profile"
         options={{
           title: 'Profile',
