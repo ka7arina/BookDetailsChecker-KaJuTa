@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, View, ScrollView, ImageBackground} from 'react-native';
-import { PaperProvider } from 'react-native-paper';
+import {StyleSheet, View, ScrollView, ImageBackground, Button} from 'react-native';
+import {PaperProvider} from 'react-native-paper';
 import FilterBar from '../components/FilterBar';
 import BookCard from '../components/BookCard';
 import '../assets/images/background-image.png'
@@ -11,8 +11,16 @@ import BookButton from '../components/AddBookButton';
 export default function BookScreen({ navigation }) {
 
   const seeDetails = () => {
-    // navigation.navigate('');
+    navigation.navigate('ViewBook');
+  };
+
+  const editCard = () => {
+    navigation.navigate('EditBook');
   }
+
+    const createBook = () => {
+        navigation.navigate('CreateBook');
+    }
 
     return (
         <PaperProvider>
@@ -22,17 +30,9 @@ export default function BookScreen({ navigation }) {
             >
             <View style={pageStyles.container}>
                 <FilterBar />
-                <BookButton></BookButton>
+                <BookButton buttonClick={createBook}/>
                 <ScrollView contentContainerStyle={pageStyles.scrollViewContent}>
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
-                    <BookCard />
+                    <BookCard cardClick={seeDetails} editCardClick={editCard} />
                 </ScrollView>
             </View>
             </ImageBackground>
