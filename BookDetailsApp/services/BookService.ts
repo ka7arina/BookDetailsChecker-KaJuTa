@@ -5,6 +5,7 @@ export const BookService = {
   getBooks: async (): Promise<Book[]> => {
     const response = await api.get<Book[]>("/660/smallbook"); 
     return response.data;
+  }
   },
 };
 
