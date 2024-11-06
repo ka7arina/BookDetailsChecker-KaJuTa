@@ -30,7 +30,7 @@ export default function TabLayout() {
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="Index"
+        name="index"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <Feather name="home" size={24} color={color} />,
@@ -68,13 +68,6 @@ export default function TabLayout() {
           headerShown: false,
         }}
       />
-        <Tabs.Screen
-            name="index"
-            options={{
-                tabBarItemStyle: { display: "none" },
-            }}
-        />
-
     </Tabs>
   );
 }
