@@ -1,10 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, ScrollView, ImageBackground, Text} from 'react-native';
+import {StyleSheet, View, ImageBackground, Text} from 'react-native';
 import { PaperProvider } from 'react-native-paper';
-import '../../assets/images/background-image.png'
-import  {StyleSheet } from 'react-native';
-import { Text, View } from '@/components/Themed';
-import * as React from "react";
+import '../../assets/images/background-image.png';
 import {Card} from 'react-native-paper';
 
 export default function HomeScreen() {

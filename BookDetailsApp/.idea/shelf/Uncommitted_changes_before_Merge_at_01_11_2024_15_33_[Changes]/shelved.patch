@@ -1,0 +1,27 @@
+Index: components/MyComponent.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/components/MyComponent.tsx b/components/MyComponent.tsx
+new file mode 100644
+--- /dev/null	(date 1730471572591)
++++ b/components/MyComponent.tsx	(date 1730471572591)
+@@ -0,0 +1,17 @@
++import * as React from 'react';
++import { Avatar, Button, Card, Text } from 'react-native-paper';
++
++const LeftContent: React.FC = () => (
++    <Avatar.Icon size={40} icon="folder" />
++);
++
++const MyComponent: React.FC = () => (
++    <Card>
++        <Card.Content>
++            <Text variant="titleLarge">Welcome to the
++                Book Crux Library</Text>
++        </Card.Content>
++    </Card>
++);
++
++export default MyComponent;

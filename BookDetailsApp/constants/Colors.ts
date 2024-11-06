@@ -1,3 +1,6 @@
+const tintColorLight = '#2f95dc';
+const tintColorDark = '#fff';
+
 export default {
   light: {
     black: "#000000",
@@ -8,7 +11,8 @@ export default {
     offWhite: "#FBFCFB",
     white: "#FFFFFF",
     text: "#000000",         
-    background: "#FBFCFB",   
+    background: "#FBFCFB",
+    tint: tintColorLight,
   },
   dark: {
     black: "#FFFFFF",
@@ -19,6 +23,7 @@ export default {
     offWhite: "#333333",
     white: "#000000",
     text: "#FFFFFF",         
-    background: "#0B0B0A",   
+    background: "#0B0B0A",
+    tint: tintColorDark,
   },
 };
