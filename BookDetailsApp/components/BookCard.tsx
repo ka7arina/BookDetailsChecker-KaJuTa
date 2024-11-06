@@ -1,26 +1,33 @@
 import * as React from 'react';
 import { Card, IconButton, MD3Colors, Text } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
+import { Book } from '../models/Book.model';
 
-const BookCard = () => (
+interface BookCardProps {
+    book: Book;
+    onEdit: (book: Book) => void;
+    onDelete: (bookId: number) => void;
+}
+
+const BookCard: React.FC<BookCardProps> = ({ book, onEdit, onDelete }) => (
     <Card style={styles.card}>
         <Card.Content>
-            <Text variant="titleLarge">Book title</Text>
-            <Text variant="bodyMedium">Publication Date</Text>
+            <Text variant="titleLarge">{book.title}</Text>
+            <Text variant="bodyMedium">Publication: {book.publication_date}</Text>
         </Card.Content>
         <Card.Actions style={styles.actions}>
             <IconButton
                 icon="trash-can"
                 iconColor={MD3Colors.neutral20}
                 size={20}
-                onPress={() => console.log('pressed edit')}
+                onPress={() => onDelete(book.id)}
                 style={styles.iconButton}
             />
             <IconButton
                 icon="pencil"
                 iconColor={MD3Colors.neutral20}
                 size={20}
-                onPress={() => console.log('pressed delete')}
+                onPress={() => onEdit(book)}
                 style={styles.iconButton}
             />
         </Card.Actions>
@@ -36,7 +43,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#AFD2A3',
         shadowColor: '#000000',
         shadowOffset: { width: 0, height: -5 },
-        shadowOpacity: 3,
+        shadowOpacity: 0.3,
         shadowRadius: 4,
         elevation: 4,
     },
@@ -47,9 +54,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        gap: 0,
     },
-
 });
 
 export default BookCard;

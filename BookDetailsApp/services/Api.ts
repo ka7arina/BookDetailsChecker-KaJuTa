@@ -10,13 +10,9 @@ const api = axios.create({
 
 api.interceptors.request.use(
   async (config) => {
-    try {
-      const token = await AsyncStorage.getItem("accessToken");
-      if (token) {
-        config.headers["Authorization"] = `Bearer ${token}`;
-      }
-    } catch (error) {
-      console.error("Error retrieving access token:", error);
+    const token = await AsyncStorage.getItem("accessToken");
+    if (token) {
+      config.headers["Authorization"] = `Bearer ${token}`;
     }
     return config;
   },
