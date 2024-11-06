@@ -1,16 +1,23 @@
 import React from 'react';
 import {StyleSheet, View, ScrollView, ImageBackground} from 'react-native';
 import { PaperProvider } from 'react-native-paper';
-import FilterBar from '../../components/FilterBar';
-import BookCard from '../../components/BookCard';
-import '../../assets/images/background-image.png'
-import BookButton from '../../components/AddBookButton';
+import FilterBar from '../components/FilterBar';
+import BookCard from '../components/BookCard';
+import '../assets/images/background-image.png'
+import BookButton from '../components/AddBookButton';
 
-export default function BookScreen() {
+
+// @ts-ignore
+export default function BookScreen({ navigation }) {
+
+  const seeDetails = () => {
+    // navigation.navigate('');
+  }
+
     return (
         <PaperProvider>
             <ImageBackground
-                source={require('../../assets/images/background-image.png')}
+                source={require('../assets/images/background-image.png')}
                 style={pageStyles.background}
             >
             <View style={pageStyles.container}>
@@ -32,7 +39,7 @@ export default function BookScreen() {
         </PaperProvider>
     );
 }
-  
+
 const pageStyles = StyleSheet.create({
     background: {
         flex: 1,
