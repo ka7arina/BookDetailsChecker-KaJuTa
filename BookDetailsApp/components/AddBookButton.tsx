@@ -1,14 +1,18 @@
 import * as React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import { FAB } from 'react-native-paper';
+import {FAB} from 'react-native-paper';
 
-const BookButton = () => (
+interface BookButtonProps {
+    buttonClick?: () => void
+}
+
+const BookButton = ({buttonClick}: BookButtonProps) => (
     <View style={styles.fab}>
-    <FAB
-        icon="plus"
-        style={styles.fabInner}
-        onPress={() => console.log('Pressed')}
-    />
+        <FAB
+            icon="plus"
+            style={styles.fabInner}
+            onPress={buttonClick}
+        />
     </View>
 );
 
