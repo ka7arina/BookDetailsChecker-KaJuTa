@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, ScrollView, ImageBackground } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation
 import FilterBar from '../components/FilterBar';
 import BookCard from '../components/BookCard';
 import BookButton from '../components/AddBookButton';
@@ -9,6 +10,7 @@ import { Book } from '../models/Book.model';
 
 export default function BookScreen() {
     const [books, setBooks] = useState<Book[]>([]);
+    const navigation = useNavigation(); // Define navigation
 
     useEffect(() => {
         fetchBooks();
@@ -36,6 +38,18 @@ export default function BookScreen() {
         }
     };
 
+    const seeDetails = (bookId: number) => {
+        navigation.navigate('ViewBook', { bookId });
+    };
+
+    const editCard = (bookId: number) => {
+        navigation.navigate('EditBook', { bookId });
+    };
+
+    const createBook = () => {
+        navigation.navigate('CreateBook');
+    };
+
     return (
         <PaperProvider>
             <ImageBackground
@@ -44,7 +58,7 @@ export default function BookScreen() {
             >
                 <View style={pageStyles.container}>
                     <FilterBar />
-                    <BookButton />
+                    <BookButton buttonClick={createBook} />
                     <ScrollView contentContainerStyle={pageStyles.scrollViewContent}>
                         {books.map((book) => (
                             <BookCard
@@ -52,6 +66,8 @@ export default function BookScreen() {
                                 book={book}
                                 onEdit={handleEditBook}
                                 onDelete={handleDeleteBook}
+                                cardClick={() => seeDetails(book.id)}
+                                editCardClick={() => editCard(book.id)}
                             />
                         ))}
                     </ScrollView>

@@ -57,4 +57,28 @@ const styles = StyleSheet.create({
     },
 });
 
-export default BookCard;
+    return (
+        <Card style={styles.card} onPress={cardClick}>
+            <Card.Content>
+                <Text variant="titleLarge">Book title</Text>
+                <Text variant="bodyMedium">Publication Date</Text>
+            </Card.Content>
+            <Card.Actions style={styles.actions}>
+                <IconButton
+                    icon="trash-can"
+                    iconColor={MD3Colors.neutral20}
+                    size={20}
+                    onPress={() => console.log('pressed delete')}
+                    style={styles.iconButton}
+                />
+                <IconButton
+                    icon="pencil"
+                    iconColor={MD3Colors.neutral20}
+                    size={20}
+                    onPress={editCardClick}
+                    style={styles.iconButton}
+                />
+            </Card.Actions>
+        </Card>
+    );
+}
