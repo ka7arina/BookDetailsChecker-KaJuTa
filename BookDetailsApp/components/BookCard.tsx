@@ -7,6 +7,7 @@ interface BookCardProps {
     book: Book;
     onEdit: (book: Book) => void;
     onDelete: (bookId: number) => void;
+    cardClick: () => void; 
 }
 
 const BookCard: React.FC<BookCardProps> = ({ book, onEdit, onDelete, cardClick }) => (
