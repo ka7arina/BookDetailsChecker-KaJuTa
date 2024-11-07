@@ -1,24 +1,72 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
+import { Text, Snackbar } from 'react-native-paper';
 
-const FilterBar = () => (
-    <View style={styles.container}>
-        <View style={styles.box}>
-            <Text style={styles.text}>Filter</Text>
+type FilterBarProps = {
+    onSortByTitle: () => void;
+    onSortByDate: () => void;
+};
+
+const FilterBar: React.FC<FilterBarProps> = ({ onSortByTitle, onSortByDate }) => {
+    const [titleVisible, setTitleVisible] = React.useState(false);
+    const [dateVisible, setDateVisible] = React.useState(false);
+
+    const onToggleTitleSnackBar = () => setTitleVisible(!titleVisible);
+    const onDismissTitleSnackBar = () => setTitleVisible(false);
+
+    const onToggleDateSnackBar = () => setDateVisible(!dateVisible);
+    const onDismissDateSnackBar = () => setDateVisible(false);
+
+    return (
+        <View style={styles.container}>
+            <View style={styles.box}>
+                <Text style={styles.text}>Filter</Text>
+            </View>
+            <View style={[styles.box, styles.clickableBox]}>
+                <Text
+                    style={styles.text}
+                    onPress={() => {
+                        onSortByTitle();
+                        onToggleTitleSnackBar();
+                    }}
+                >
+                    Book Title
+                </Text>
+            </View>
+            <View style={[styles.box, styles.clickableBox]}>
+                <Text
+                    style={styles.text}
+                    onPress={() => {
+                        onSortByDate();
+                        onToggleDateSnackBar();
+                    }}
+                >
+                    Publication Date
+                </Text>
+            </View>
+
+            {/* Snackbar for sorting by title */}
+            <Snackbar
+                visible={titleVisible}
+                onDismiss={onDismissTitleSnackBar}
+                duration={3000}
+                style={styles.snackbar}
+            >
+                Sorting by Book Title
+            </Snackbar>
+
+            {/* Snackbar for sorting by date */}
+            <Snackbar
+                visible={dateVisible}
+                onDismiss={onDismissDateSnackBar}
+                duration={3000}
+                style={styles.snackbar}
+            >
+                Sorting by Publication Date
+            </Snackbar>
         </View>
-        <View style={[styles.box, styles.clickableBox]}>
-            <Text style={styles.text} onPress={() => console.log('pressed book title filter')}>
-                Book Title
-            </Text>
-        </View>
-        <View style={[styles.box, styles.clickableBox]}>
-            <Text style={styles.text} onPress={() => console.log('pressed filter publication date')}>
-                Publication Date
-            </Text>
-        </View>
-    </View>
-);
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -46,6 +94,12 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#d3d3d3',
+    },
+    snackbar: {
+        backgroundColor: '#74A265',
+        position: 'absolute',
+        justifyContent: 'flex-end',
+
     },
 });
 
