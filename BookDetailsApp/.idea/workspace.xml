@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f502c53-ceec-43f0-8c19-7f91ed94dbda" name="Changes" comment="finally fixed navigation">
+    <list default="true" id="1f502c53-ceec-43f0-8c19-7f91ed94dbda" name="Changes" comment="merged branch Book-Crud-elemente correctly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Books.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/Books.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BookCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BookCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/BookService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/BookService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730471537889</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="merged branch Book-Crud-elemente correctly">
+      <option name="closed" value="true" />
+      <created>1730969497420</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730969497420</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +126,7 @@
     <MESSAGE value="added pretty icons" />
     <MESSAGE value="made the basis for the navigation" />
     <MESSAGE value="finally fixed navigation" />
-    <option name="LAST_COMMIT_MESSAGE" value="finally fixed navigation" />
+    <MESSAGE value="merged branch Book-Crud-elemente correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged branch Book-Crud-elemente correctly" />
   </component>
 </project>

@@ -27,8 +27,8 @@ export default function BookScreen({ navigation }) {
         }
     };
 
-    const seeDetails = () => {
-        navigation.navigate('ViewBook');
+    const seeDetails = (bookId: number) => {
+        navigation.navigate('ViewBook', {bookId});
     };
 
     const editCard = (book: Book) => {
@@ -65,7 +65,7 @@ export default function BookScreen({ navigation }) {
                         <BookCard
                             key={book.id}
                             book={book}
-                            cardClick={seeDetails}
+                            cardClick={() => seeDetails(book.id)}
                             editCardClick={editCard}
                             onDelete={handleDeleteBook}
                         />
