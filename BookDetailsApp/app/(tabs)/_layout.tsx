@@ -26,9 +26,11 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
+        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].offWhite,
+        tabBarInactiveTintColor: Colors[colorScheme ?? 'light'].darkGray,
+        tabBarStyle: {
+          backgroundColor: Colors[colorScheme ?? 'light'].greenDark,
+        },
         headerShown: false,
       }}>
       <Tabs.Screen
