@@ -67,7 +67,6 @@ export default function BookScreen() {
                                 onEdit={handleEditBook}
                                 onDelete={handleDeleteBook}
                                 cardClick={() => seeDetails(book.id)}
-                                editCardClick={() => editCard(book.id)}
                             />
                         ))}
                     </ScrollView>

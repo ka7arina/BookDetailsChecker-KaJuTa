@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card, IconButton, MD3Colors, Text } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Book } from '../models/Book.model';
 
 interface BookCardProps {
@@ -9,29 +9,31 @@ interface BookCardProps {
     onDelete: (bookId: number) => void;
 }
 
-const BookCard: React.FC<BookCardProps> = ({ book, onEdit, onDelete }) => (
-    <Card style={styles.card}>
-        <Card.Content>
-            <Text variant="titleLarge">{book.title}</Text>
-            <Text variant="bodyMedium">Publication: {book.publication_date}</Text>
-        </Card.Content>
-        <Card.Actions style={styles.actions}>
-            <IconButton
-                icon="trash-can"
-                iconColor={MD3Colors.neutral20}
-                size={20}
-                onPress={() => onDelete(book.id)}
-                style={styles.iconButton}
-            />
-            <IconButton
-                icon="pencil"
-                iconColor={MD3Colors.neutral20}
-                size={20}
-                onPress={() => onEdit(book)}
-                style={styles.iconButton}
-            />
-        </Card.Actions>
-    </Card>
+const BookCard: React.FC<BookCardProps> = ({ book, onEdit, onDelete, cardClick }) => (
+    <TouchableOpacity onPress={cardClick}> 
+        <Card style={styles.card}>
+            <Card.Content>
+                <Text variant="titleLarge">{book.title}</Text>
+                <Text variant="bodyMedium">Publication: {book.publication_date}</Text>
+            </Card.Content>
+            <Card.Actions style={styles.actions}>
+                <IconButton
+                    icon="trash-can"
+                    iconColor={MD3Colors.neutral20}
+                    size={20}
+                    onPress={() => onDelete(book.id)}
+                    style={styles.iconButton}
+                />
+                <IconButton
+                    icon="pencil"
+                    iconColor={MD3Colors.neutral20}
+                    size={20}
+                    onPress={() => onEdit(book)}
+                    style={styles.iconButton}
+                />
+            </Card.Actions>
+        </Card>
+    </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
@@ -57,28 +59,4 @@ const styles = StyleSheet.create({
     },
 });
 
-    return (
-        <Card style={styles.card} onPress={cardClick}>
-            <Card.Content>
-                <Text variant="titleLarge">Book title</Text>
-                <Text variant="bodyMedium">Publication Date</Text>
-            </Card.Content>
-            <Card.Actions style={styles.actions}>
-                <IconButton
-                    icon="trash-can"
-                    iconColor={MD3Colors.neutral20}
-                    size={20}
-                    onPress={() => console.log('pressed delete')}
-                    style={styles.iconButton}
-                />
-                <IconButton
-                    icon="pencil"
-                    iconColor={MD3Colors.neutral20}
-                    size={20}
-                    onPress={editCardClick}
-                    style={styles.iconButton}
-                />
-            </Card.Actions>
-        </Card>
-    );
-}
+export default BookCard;
