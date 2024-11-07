@@ -88,5 +88,6 @@ const pageStyles = StyleSheet.create({
     },
     scrollViewContent: {
         paddingTop: 60,
+        paddingBottom: 20,
     },
 });

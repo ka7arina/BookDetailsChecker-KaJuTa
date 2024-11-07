@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Card, IconButton, MD3Colors, Text} from 'react-native-paper';
-import {StyleSheet} from 'react-native';
-import {Book} from "@/models/Book.model";
+import { Card, IconButton, MD3Colors, Text } from 'react-native-paper';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Book } from '../models/Book.model';
 
 type BookCardProps = {
     cardClick: () => void,
