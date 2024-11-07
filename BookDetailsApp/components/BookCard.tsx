@@ -1,60 +1,60 @@
 import * as React from 'react';
-import { Card, IconButton, MD3Colors, Text } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
-import { Book } from '../models/Book.model';
+import {Card, IconButton, MD3Colors, Text} from 'react-native-paper';
+import {StyleSheet} from 'react-native';
 
-interface BookCardProps {
-    book: Book;
-    onEdit: (book: Book) => void;
-    onDelete: (bookId: number) => void;
+type BookCardProps = {
+    cardClick?: () => void,
+    editCardClick?: () => void
+};
+
+export default function BookCard({cardClick, editCardClick}: BookCardProps) {
+    const styles = StyleSheet.create({
+        card: {
+            margin: 10,
+            padding: 10,
+            width: '90%',
+            alignSelf: 'center',
+            backgroundColor: '#AFD2A3',
+            shadowColor: '#000000',
+            shadowOffset: {width: 0, height: -5},
+            shadowOpacity: 3,
+            shadowRadius: 4,
+            elevation: 4,
+        },
+        iconButton: {
+            backgroundColor: 'transparent',
+        },
+        actions: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            gap: 0,
+        },
+    });
+
+
+    return (
+        <Card style={styles.card} onPress={cardClick}>
+            <Card.Content>
+                <Text variant="titleLarge">Book title</Text>
+                <Text variant="bodyMedium">Publication Date</Text>
+            </Card.Content>
+            <Card.Actions style={styles.actions}>
+                <IconButton
+                    icon="trash-can"
+                    iconColor={MD3Colors.neutral20}
+                    size={20}
+                    onPress={() => console.log('pressed delete')}
+                    style={styles.iconButton}
+                />
+                <IconButton
+                    icon="pencil"
+                    iconColor={MD3Colors.neutral20}
+                    size={20}
+                    onPress={editCardClick}
+                    style={styles.iconButton}
+                />
+            </Card.Actions>
+        </Card>
+    );
 }
-
-const BookCard: React.FC<BookCardProps> = ({ book, onEdit, onDelete }) => (
-    <Card style={styles.card}>
-        <Card.Content>
-            <Text variant="titleLarge">{book.title}</Text>
-            <Text variant="bodyMedium">Publication: {book.publication_date}</Text>
-        </Card.Content>
-        <Card.Actions style={styles.actions}>
-            <IconButton
-                icon="trash-can"
-                iconColor={MD3Colors.neutral20}
-                size={20}
-                onPress={() => onDelete(book.id)}
-                style={styles.iconButton}
-            />
-            <IconButton
-                icon="pencil"
-                iconColor={MD3Colors.neutral20}
-                size={20}
-                onPress={() => onEdit(book)}
-                style={styles.iconButton}
-            />
-        </Card.Actions>
-    </Card>
-);
-
-const styles = StyleSheet.create({
-    card: {
-        margin: 10,
-        padding: 10,
-        width: '90%',
-        alignSelf: 'center',
-        backgroundColor: '#AFD2A3',
-        shadowColor: '#000000',
-        shadowOffset: { width: 0, height: -5 },
-        shadowOpacity: 0.3,
-        shadowRadius: 4,
-        elevation: 4,
-    },
-    iconButton: {
-        backgroundColor: 'transparent',
-    },
-    actions: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-    },
-});
-
-export default BookCard;
