@@ -15,7 +15,7 @@ Falls eines von denen nicht installiert ist, haben wir ihnen diese [Anleitung](h
 Mit dem Folgenden Command können sie das Git Repository clonen.
 
 ```
-https://github.com/ka7arina/BookDetailsChecker-KaJuTa.git
+git clone https://github.com/ka7arina/BookDetailsChecker-KaJuTa.git
 ```
 
 ### Schritt 3
