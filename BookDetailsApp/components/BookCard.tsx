@@ -1,13 +1,17 @@
 import * as React from 'react';
 import {Card, IconButton, MD3Colors, Text} from 'react-native-paper';
 import {StyleSheet} from 'react-native';
+import {Book} from "@/models/Book.model";
 
 type BookCardProps = {
-    cardClick?: () => void,
-    editCardClick?: () => void
+    cardClick: () => void,
+    editCardClick: (book: Book) => void
+    book: Book,
+    onDelete: (bookId: number) => void,
+
 };
 
-export default function BookCard({cardClick, editCardClick}: BookCardProps) {
+export default function BookCard({ book, cardClick, editCardClick, onDelete}: BookCardProps) {
     const styles = StyleSheet.create({
         card: {
             margin: 10,
@@ -36,22 +40,22 @@ export default function BookCard({cardClick, editCardClick}: BookCardProps) {
     return (
         <Card style={styles.card} onPress={cardClick}>
             <Card.Content>
-                <Text variant="titleLarge">Book title</Text>
-                <Text variant="bodyMedium">Publication Date</Text>
+                <Text variant="titleLarge">{book.title}</Text>
+                <Text variant="bodyMedium">Publication: {book.publication_date}</Text>
             </Card.Content>
             <Card.Actions style={styles.actions}>
                 <IconButton
                     icon="trash-can"
                     iconColor={MD3Colors.neutral20}
                     size={20}
-                    onPress={() => console.log('pressed delete')}
+                    onPress={() => onDelete(book.id)}
                     style={styles.iconButton}
                 />
                 <IconButton
                     icon="pencil"
                     iconColor={MD3Colors.neutral20}
                     size={20}
-                    onPress={editCardClick}
+                    onPress={() => editCardClick(book)}
                     style={styles.iconButton}
                 />
             </Card.Actions>

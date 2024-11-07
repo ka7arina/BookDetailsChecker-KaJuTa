@@ -1,26 +1,55 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, ScrollView, ImageBackground, Button} from 'react-native';
 import {PaperProvider} from 'react-native-paper';
 import FilterBar from '../components/FilterBar';
 import BookCard from '../components/BookCard';
 import '../assets/images/background-image.png'
 import BookButton from '../components/AddBookButton';
+import BookService from '../services/BookService';
+import { Book } from '@/models/Book.model';
 
 
 // @ts-ignore
 export default function BookScreen({ navigation }) {
 
-  const seeDetails = () => {
-    navigation.navigate('ViewBook');
-  };
+    const [books, setBooks] = useState<Book[]>([]);
 
-  const editCard = () => {
-    navigation.navigate('EditBook');
-  }
+    useEffect(() => {
+        fetchBooks();
+    }, []);
+
+    const fetchBooks = async () => {
+        try {
+            const data = await BookService.getBooks();
+            setBooks(data);
+        } catch (error) {
+            console.error("Error fetching books:", error);
+        }
+    };
+
+    const seeDetails = () => {
+        navigation.navigate('ViewBook');
+    };
+
+    const editCard = (book: Book) => {
+        console.log("Edit book:", book);
+        navigation.navigate('EditBook');
+    };
 
     const createBook = () => {
         navigation.navigate('CreateBook');
+
     }
+
+    const handleDeleteBook = async (bookId: number) => {
+        try {
+            await BookService.deleteBook(bookId);
+            setBooks(books.filter((book) => book.id !== bookId));
+        } catch (error) {
+            console.error("Error deleting book:", error);
+        }
+    };
+
 
     return (
         <PaperProvider>
@@ -32,7 +61,15 @@ export default function BookScreen({ navigation }) {
                 <FilterBar />
                 <BookButton buttonClick={createBook}/>
                 <ScrollView contentContainerStyle={pageStyles.scrollViewContent}>
-                    <BookCard cardClick={seeDetails} editCardClick={editCard} />
+                    {books.map((book) => (
+                        <BookCard
+                            key={book.id}
+                            book={book}
+                            cardClick={seeDetails}
+                            editCardClick={editCard}
+                            onDelete={handleDeleteBook}
+                        />
+                    ))}
                 </ScrollView>
             </View>
             </ImageBackground>
