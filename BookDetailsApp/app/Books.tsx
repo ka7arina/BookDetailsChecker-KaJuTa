@@ -51,6 +51,20 @@ export default function BookScreen({ navigation }) {
         navigation.navigate('CreateBook');
     };
 
+    const sortByTitle = () => {
+        const sortedBooks = [...books].sort((a, b) => a.title.localeCompare(b.title));
+        setBooks(sortedBooks);
+    };
+
+// converts it into a date before sorting, so it can sort it chronologically yk
+    const sortByPublicationDate = () => {
+        const sortedBooks = [...books].sort((a, b) =>
+            new Date(a.publication_date).getTime() - new Date(b.publication_date).getTime()
+        );
+        setBooks(sortedBooks);
+    };
+
+
     return (
         <PaperProvider>
             <ImageBackground
@@ -58,7 +72,7 @@ export default function BookScreen({ navigation }) {
                 style={pageStyles.background}
             >
                 <View style={pageStyles.container}>
-                    <FilterBar />
+                    <FilterBar onSortByTitle={sortByTitle} onSortByDate={sortByPublicationDate}/>
                     <BookButton buttonClick={createBook} />
                     <ScrollView contentContainerStyle={pageStyles.scrollViewContent}>
                         {books.map((book) => (
