@@ -31,6 +31,10 @@ const LoginPage = () => {
     }
   };
 
+  const createBook = () => {
+    navigation.navigate('Home');
+};
+
   return (
     <View style={pageStyles.container}>
       <Text style={[styles.welcomeText, pageStyles.title]}>

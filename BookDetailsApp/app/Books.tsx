@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, ScrollView, ImageBackground } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native'; // Import useNavigation
+import { useNavigation } from '@react-navigation/native'; 
 import FilterBar from '../components/FilterBar';
 import BookCard from '../components/BookCard';
 import BookButton from '../components/AddBookButton';
@@ -10,7 +10,7 @@ import { Book } from '../models/Book.model';
 
 export default function BookScreen() {
     const [books, setBooks] = useState<Book[]>([]);
-    const navigation = useNavigation(); // Define navigation
+    const navigation = useNavigation();
 
     useEffect(() => {
         fetchBooks();
@@ -64,7 +64,7 @@ export default function BookScreen() {
                             <BookCard
                                 key={book.id}
                                 book={book}
-                                onEdit={handleEditBook}
+                                onEdit={() => editCard(book.id)} 
                                 onDelete={handleDeleteBook}
                                 cardClick={() => seeDetails(book.id)}
                             />
