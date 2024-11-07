@@ -9,10 +9,9 @@ type ProfileCardProps = {
     email: string;
     firstname?: string;
     lastname?: string;
-    onSignOut: () => void;
 };
 
-export default function ProfileCard({ age, email, firstname, lastname, onSignOut }: ProfileCardProps) {
+export default function ProfileCard({ age, email, firstname, lastname }: ProfileCardProps) {
     const colorScheme = useColorScheme();
 
     const styles = StyleSheet.create({

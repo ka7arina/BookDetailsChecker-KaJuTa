@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, ImageBackground, Text } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import ProfileCard from "@/components/ProfileCard";
+import ProfileCard from "../../components/ProfileCard";
 
 interface User {
     age?: number;
@@ -49,7 +49,7 @@ export default function ProfileScreen() {
                             />
                         </View>
                     ) : (
-                        <Text style={styles.noDataText}>No user data available</Text>
+                        <Text style={styles.noDataText}>make sure to log in first...</Text>
                     )}
                 </View>
             </ImageBackground>
@@ -68,9 +68,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     centeredContent: {
-        width: '100%', // Make the content container width 100% if needed
-        alignItems: 'center', // Center horizontally
-        justifyContent: 'center', // Center vertically
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     noDataText: {
         textAlign: 'center',

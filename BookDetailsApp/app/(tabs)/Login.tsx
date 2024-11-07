@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import LoginService from "../../services/LoginService";
 import styles from "../../constants/Styles";
 import Colors from "../../constants/Colors";
+import * as Updates from 'expo-updates';
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -13,14 +14,15 @@ const LoginPage = () => {
 
   const navigation: any = useNavigation();
 
+  const handleReload = async () => {
+    await Updates.reloadAsync();
+  };
+
   const handleLogin = async () => {
     try {
       const data = await LoginService.login(email, password);
       console.log("Login successful", data.accessToken, data.user);
-
-      /**
-       * Add navigation
-       */
+      await handleReload();
 
     } catch (err) {
       if (err instanceof Error) {

@@ -6,7 +6,6 @@ import { Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-
 import BookStack from './BookStack';
 
 import AntDesign from '@expo/vector-icons/AntDesign';
