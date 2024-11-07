@@ -11,8 +11,10 @@ const LoginService = {
       console.log("Server response:", response.data);
 
       const token = response.data.accessToken;
+      const user = response.data.user;
 
       await AsyncStorage.setItem("accessToken", token);
+      await AsyncStorage.setItem("userData", JSON.stringify(user));
 
       console.log("Access token saved in AsyncStorage.");
       return response.data;

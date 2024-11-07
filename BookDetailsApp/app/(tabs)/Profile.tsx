@@ -1,9 +1,37 @@
-import React from 'react';
-import {StyleSheet, View, ScrollView, ImageBackground, Text} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, ImageBackground, Text } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
-import '../../assets/images/background-image.png'
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import ProfileCard from "@/components/ProfileCard";
+
+interface User {
+    age?: number;
+    email: string;
+    firstname?: string;
+    id: number;
+    lastname?: string;
+}
 
 export default function ProfileScreen() {
+    const [user, setUser] = useState<User | null>(null);
+
+    useEffect(() => {
+        const loadUserData = async () => {
+            try {
+                const jsonValue = await AsyncStorage.getItem("userData");
+                if (jsonValue != null) {
+                    const userData: User = JSON.parse(jsonValue);
+                    setUser(userData);
+                    console.log("User data loaded:", userData);
+                }
+            } catch (error) {
+                console.error("Failed to load user data:", error);
+            }
+        };
+
+        loadUserData();
+    }, []);
+
     return (
         <PaperProvider>
             <ImageBackground
@@ -11,9 +39,18 @@ export default function ProfileScreen() {
                 style={styles.background}
             >
                 <View style={styles.container}>
-                    <ScrollView contentContainerStyle={styles.scrollViewContent}>
-                        <Text style={styles.title}>this is the profilepage</Text>
-                    </ScrollView>
+                    {user ? (
+                        <View style={styles.centeredContent}>
+                            <ProfileCard
+                                age={user.age}
+                                email={user.email}
+                                firstname={user.firstname}
+                                lastname={user.lastname}
+                            />
+                        </View>
+                    ) : (
+                        <Text style={styles.noDataText}>No user data available</Text>
+                    )}
                 </View>
             </ImageBackground>
         </PaperProvider>
@@ -21,20 +58,22 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
     background: {
         flex: 1,
         resizeMode: 'cover',
     },
     container: {
         flex: 1,
-        alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
     },
-    scrollViewContent: {
-        paddingTop: 60,
+    centeredContent: {
+        width: '100%', // Make the content container width 100% if needed
+        alignItems: 'center', // Center horizontally
+        justifyContent: 'center', // Center vertically
+    },
+    noDataText: {
+        textAlign: 'center',
+        fontSize: 16,
     },
 });
