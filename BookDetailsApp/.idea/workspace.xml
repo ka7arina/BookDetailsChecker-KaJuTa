@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1f502c53-ceec-43f0-8c19-7f91ed94dbda" name="Changes" comment="created a profile page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProfileCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProfileCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2oCN893yYBjrcBrQlKFEUcQZVuF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/Navigation",
+    "last_opened_file_path": "C:/Projekts/BookDetailsChecker-KaJuTa/BookDetailsApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "C:\\Projekts\\BookDetailsChecker-KaJuTa\\BookDetailsApp\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projekts\BookDetailsChecker-KaJuTa\BookDetailsApp\assets\images" />
+      <recent name="C:\Projekts\BookDetailsChecker-KaJuTa\BookDetailsApp\app\(tabs)" />
+      <recent name="C:\Projekts\BookDetailsChecker-KaJuTa\BookDetailsApp\app" />
+      <recent name="C:\Projekts\BookDetailsChecker-KaJuTa\BookDetailsApp\app\(tabs)\routes" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-WS-242.20224.342" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f502c53-ceec-43f0-8c19-7f91ed94dbda" name="Changes" comment="" />
+      <created>1730369435464</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730369435464</updated>
+      <workItem from="1730369448878" duration="31298000" />
+    </task>
+    <task id="LOCAL-00001" summary="created home, book, and profile page in navbar">
+      <option name="closed" value="true" />
+      <created>1730371462840</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730371462840</updated>
+    </task>
+    <task id="LOCAL-00002" summary="created home, book, and profile page in navbar">
+      <option name="closed" value="true" />
+      <created>1730371753492</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730371753492</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added pretty icons">
+      <option name="closed" value="true" />
+      <created>1730372250476</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730372250476</updated>
+    </task>
+    <task id="LOCAL-00004" summary="made the basis for the navigation">
+      <option name="closed" value="true" />
+      <created>1730471537889</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730471537889</updated>
+    </task>
+    <task id="LOCAL-00005" summary="merged branch Book-Crud-elemente correctly">
+      <option name="closed" value="true" />
+      <created>1730969497420</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730969497420</updated>
+    </task>
+    <task id="LOCAL-00006" summary="created a profile page">
+      <option name="closed" value="true" />
+      <created>1730990126716</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730990126716</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="created home, book, and profile page in navbar" />
+    <MESSAGE value="added pretty icons" />
+    <MESSAGE value="made the basis for the navigation" />
+    <MESSAGE value="finally fixed navigation" />
+    <MESSAGE value="merged branch Book-Crud-elemente correctly" />
+    <MESSAGE value="created a profile page" />
+    <option name="LAST_COMMIT_MESSAGE" value="created a profile page" />
+  </component>
+</project>
